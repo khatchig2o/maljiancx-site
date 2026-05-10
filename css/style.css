@@ -1,0 +1,489 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   COLOR SYSTEM
+========================================================= */
+
+:root {
+
+    /* Core */
+    --white: #ffffff;
+    --off-white: #f8fafc;
+
+    /* Brand */
+    --navy-deep: #0a1628;
+    --navy-light: #112240;
+
+    /* Text */
+    --text-primary: #0a1628;
+    --text-muted: #475569;
+
+    /* Borders */
+    --border: #e2e8f0;
+
+    /* Shadows */
+    --shadow-soft: 0 8px 24px rgba(10, 22, 40, 0.08);
+
+    /* Radius */
+    --radius-sm: 6px;
+    --radius-md: 10px;
+    --radius-lg: 16px;
+
+    /* Layout */
+    --container-width: 1400px;
+}
+
+
+/* =========================================================
+   BASE
+========================================================= */
+
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    background-color: var(--white);
+    color: var(--text-primary);
+    line-height: 1.7;
+
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+a {
+    text-decoration: none;
+}
+
+.container {
+    width: 100%;
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+
+/* =========================================================
+   TYPOGRAPHY
+========================================================= */
+
+h1,
+h2,
+h3 {
+    color: var(--navy-deep);
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+p {
+    color: var(--text-muted);
+}
+
+
+/* =========================================================
+   HEADER / NAVIGATION
+========================================================= */
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+
+    background-color: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+
+    border-bottom: 1px solid var(--border);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 1.2rem 0;
+}
+
+.logo img {
+    height: 90px;
+    width: auto;
+    mix-blend-mode: multiply;
+}
+
+nav ul {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+
+    list-style: none;
+}
+
+nav ul li a {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    transition: color 0.2s ease;
+}
+
+nav ul li a:hover {
+    color: var(--navy-deep);
+}
+
+
+/* =========================================================
+   HERO SECTION
+========================================================= */
+
+.hero {
+    padding: 8rem 0 6rem;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: clamp(2.2rem, 5vw, 4rem);
+    max-width: 900px;
+    margin: 0 auto 1.5rem;
+}
+
+.hero p {
+    max-width: 700px;
+    margin: 0 auto 2.5rem;
+
+    font-size: 1.15rem;
+}
+
+
+/* =========================================================
+   BUTTONS
+========================================================= */
+
+.btn {
+    display: inline-block;
+
+    background-color: var(--navy-deep);
+    color: var(--white);
+
+    border: 2px solid var(--navy-deep);
+    border-radius: var(--radius-sm);
+
+    padding: 0.9rem 2rem;
+
+    font-size: 1rem;
+    font-weight: 600;
+
+    transition:
+        background-color 0.25s ease,
+        border-color 0.25s ease,
+        transform 0.2s ease;
+}
+
+.btn:hover {
+    background-color: var(--navy-light);
+    border-color: var(--navy-light);
+
+    transform: translateY(-2px);
+}
+
+.btn-large {
+    padding: 1rem 2.5rem;
+    font-size: 1.05rem;
+}
+
+
+/* =========================================================
+   FEATURES
+========================================================= */
+
+.features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+
+    gap: 2rem;
+
+    margin-bottom: 6rem;
+}
+
+.feature-card {
+    background-color: var(--off-white);
+
+    padding: 2.5rem 2rem;
+
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+
+    transition:
+        transform 0.2s ease,
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+
+    border-color: var(--navy-deep);
+
+    box-shadow: var(--shadow-soft);
+}
+
+.feature-card h3 {
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+}
+
+.feature-card p {
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   ABOUT PREVIEW
+========================================================= */
+
+.about-preview {
+    margin-bottom: 6rem;
+
+    padding: 4rem 3rem;
+
+    background-color: var(--off-white);
+
+    border-radius: var(--radius-lg);
+}
+
+.about-preview h2 {
+    margin-bottom: 1.25rem;
+    font-size: 2rem;
+}
+
+.about-preview p {
+    max-width: 700px;
+}
+
+
+/* =========================================================
+   PAGE HEADER
+========================================================= */
+
+.page-header {
+    padding: 5rem 0 2rem;
+}
+
+.page-header h1 {
+    font-size: clamp(2rem, 4vw, 3rem);
+}
+
+
+/* =========================================================
+   CONTENT SECTIONS
+========================================================= */
+
+.content {
+    max-width: 850px;
+    margin: 0 auto;
+
+    padding-bottom: 5rem;
+}
+
+.content h2 {
+    margin-top: 3rem;
+    margin-bottom: 1rem;
+
+    font-size: 1.8rem;
+}
+
+.content h2:first-child {
+    margin-top: 0;
+}
+
+.content p {
+    margin-bottom: 1.5rem;
+    font-size: 1.05rem;
+}
+
+
+/* =========================================================
+   CONTACT PAGE
+========================================================= */
+
+.contact-content {
+    text-align: center;
+    padding-top: 2rem;
+}
+
+.contact-content .btn {
+    margin: 2rem 0;
+}
+
+.response-note {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+}
+
+
+/* =========================================================
+   ABOUT PAGE
+========================================================= */
+
+.about-cta {
+    margin-top: 3rem;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer {
+    margin-top: auto;
+
+    background-color: var(--off-white);
+
+    border-top: 1px solid var(--border);
+
+    text-align: center;
+
+    padding: 2rem;
+
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 768px) {
+
+    html {
+        font-size: 15px;
+    }
+
+    .container {
+        padding: 0 1.5rem;
+    }
+
+    nav {
+        padding: 1rem 0;
+    }
+
+    nav ul {
+        gap: 1.25rem;
+    }
+
+    .hero {
+        padding: 5rem 0 4rem;
+    }
+
+    .features {
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 1.5rem;
+    }
+
+    .feature-card {
+        padding: 2rem 1.5rem;
+    }
+
+    .about-preview {
+        padding: 3rem 2rem;
+    }
+
+    .page-header {
+        padding: 4rem 0 2rem;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+
+    html {
+        font-size: 14px;
+    }
+
+    .container {
+        padding: 0 1.25rem;
+    }
+
+    nav {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+
+        gap: 1rem;
+    }
+
+    .logo img {
+        height: 75px;
+    }
+
+    .hero {
+        padding: 4rem 0 3rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .btn {
+        width: 100%;
+        text-align: center;
+    }
+
+    .features {
+        grid-template-columns: 1fr;
+
+        gap: 1rem;
+
+        margin-bottom: 4rem;
+    }
+
+    .feature-card {
+        padding: 1.75rem 1.5rem;
+    }
+
+    .about-preview {
+        padding: 2rem 1.5rem;
+    }
+
+    .content h2 {
+        font-size: 1.5rem;
+    }
+
+    footer {
+        padding: 1.5rem;
+    }
+}
+
+
+/* =========================================================
+   LARGE SCREENS
+========================================================= */
+
+@media (min-width: 1800px) {
+
+    html {
+        font-size: 18px;
+    }
+
+    .features {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
